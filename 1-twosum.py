@@ -1,3 +1,6 @@
+# Objective:
+# Given an array nums, find a pair such that their sum is target.
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
