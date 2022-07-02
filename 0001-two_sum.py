@@ -18,6 +18,5 @@ class Solution(object):
             else:
                 difference[nums[x]] = x 
 
-                
 # Time Complexity: O(n)
 # Space Complexity: O(n)
