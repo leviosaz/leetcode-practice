@@ -21,3 +21,6 @@ class Solution(object):
         if stack:
             return False
         return True
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
