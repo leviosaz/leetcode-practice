@@ -2,27 +2,25 @@
 
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
-        if len(s) < 2:
-            return len(s)
-        
-        hashmap = {}
-        maxLength = 1
-        
+        maxWord = ""
+        word = ""
         counter = 0
-        
         while counter < len(s):
-            if hashmap.get(s[counter]):
-                wordLength = len(hashmap.keys())
-                if wordLength > maxLength:
-                    maxLength = wordLength
-                counter = hashmap[s[counter]]
-                hashmap = {}                
+            if s[counter] in word:
+                if len(word) > len(maxWord):
+                    maxWord = word
+                if len(word) <= 1:
+                    word = word[-1]
+                else:
+                    print(word)
+                    word = word[word.index(s[counter])+1:] + s[counter]
             else:
-                hashmap[s[counter]] = counter
-            
-            counter += 1
-        
-        return max(len(hashmap.keys()), maxLength)
+                word += s[counter]
+                print(word)
+            counter+=1
+        if len(maxWord) > len(word):
+            return len(maxWord)
+        return len(word)
 
 # Time Complexity: O(n^n)
 # Space Complexity: O(n)
